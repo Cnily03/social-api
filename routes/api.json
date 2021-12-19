@@ -1,0 +1,10 @@
+{
+  "web": {
+    "bilibili": {
+      "userinfo": "userinfo"
+    }
+  },
+  "util": {
+    "pinyin": "pinyin"
+  }
+}

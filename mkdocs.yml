@@ -1,0 +1,118 @@
+# Project information
+site_name: Social API Docs
+site_description: Social API Docs
+site_author: Jevon Wang
+site_favicon:
+
+# Copyright
+copyright: Copyright 2021 Jevon Wang
+
+# Repository
+repo_url: https://github.com/Cnily03/social-api
+repo_name: Cnily03/social-api
+
+theme:
+  name: material
+  palette: 
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Light
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Dark
+  # Default Language
+  language: zh
+  direction: ltr
+  # Icon
+  icon:
+    repo: fontawesome/brands/git-alt
+  # Features
+  features:
+    # Navigation
+    - navigation.tabs
+    - navigation.indexes
+    # - navigation.sections
+    - navigation.top
+    - navigation.expand
+    # Content Table
+    - content.tabs.link
+    # No Right Side Bar
+    # - toc.integrate
+
+# Nav Bar
+nav:
+  - 主页: index.md
+  - API:
+    - api/index.md
+    - 工具类:
+      - api/util/pinyin.md
+    - 网络平台:
+      - BiliBili:
+        - api/web/bilibili/userinfo.md
+  # - Social: 
+
+extra:
+  alternate:
+    - name: 中文（简体）
+      link: /
+      lang: zh
+    # - name: English
+    #   link: /en/
+    #   lang: en
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Cnily03
+
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/extra_admonitions.css
+  - stylesheets/extra_others.css
+
+# Plugins
+plugins:
+  - minify:
+      minify_html: true
+
+markdown_extensions:
+  # Code Blocks
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  # List
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  # Buttons
+  - attr_list
+  # Tables
+  - tables
+  # Content Table
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
+  # Icons + Emojis
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg 
+  # Formatting
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  # Admonitions
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  # Permanent Link
+  - toc:
+      permalink: true
+      permalink_title: 锚点连接至此节
