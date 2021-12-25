@@ -12,10 +12,7 @@ const pinyinReqURLs = {
 async function getPinyin(wd, dictionary = "auto") {
     dictionary = dictionary || "auto";
     if (!wd || !Object.keys(pinyinReqURLs).concat(["auto"]).includes(dictionary)) return {
-        query: wd,
-        data: {
-            pinyin: []
-        },
+        data: {},
         error: {
             code: "INVALID PARAM",
             message: "参数错误。"
@@ -64,8 +61,8 @@ async function getPinyin(wd, dictionary = "auto") {
                             break;
                         }
                     }
-                    contentData.query = wd;
                     contentData.data = {
+                        query: wd,
                         pinyin: pinyin,
                         dictionary: dictionaryName,
                         statusCode: res.statusCode

@@ -54,9 +54,9 @@ GET /util/pinyin
   
     - **`status`** : `Number` - 客户端访问 API 服务器的状态码。
     - **`error`** : `JSON` - 出现错误时含有含有 KEY `code` 和 `message`.
-    - **`query`** : `String` - 查询的词语。
     - **`data`** : `JSON` - 查询结果。
         - **`statusCode`** : `Number` - 服务器访问词典的状态码。
+        - **`query`** : `String` - 查询的词语。
         - **`pinyin`** : `String[]` -  包含拼音的数组。
         - **`dictionary`** : `String` - 该查询结果根据的词典。
 
@@ -80,11 +80,14 @@ GET /util/pinyin
 
         {
           "error": {},
-          "query": "巷道",
           "data": {
-              "pinyin": ["hàng dào", "xiàng dào"],
-              "dictionary": "baidu",
-              "statusCode": 200,
+            "query": "巷道",
+            "pinyin": [
+              "hàng dào",
+              "xiàng dào"
+            ],
+            "dictionary": "baidu",
+            "statusCode": 200
           },
           "status": 200
         }
@@ -107,8 +110,8 @@ GET /util/pinyin
 
         {
           "error": {},
-          "query": "魑魅魍魉",
           "data": {
+            "query": "魑魅魍魉",
             "pinyin": [
               "chī mèi wǎng liǎng"
             ],
@@ -139,8 +142,8 @@ GET /util/pinyin
             "code": "FAILED SEARCH",
             "message": "词典中检索不到词语「册逝」。"
           },
-          "query": "册逝",
           "data": {
+            "query": "册逝",
             "pinyin": [],
             "dictionary": "sogou",
             "statusCode": 200
@@ -162,12 +165,10 @@ GET /util/pinyin
         ``` json
         HTTP/1.1 200 OK
         Content-Type: application/json; charset=utf-8
-        Content-Length: 96
+        Content-Length: 85
 
         {
-          "data": {
-            "pinyin": []
-          },
+          "data": {},
           "error": {
             "code": "INVALID PARAM",
             "message": "参数错误。"
